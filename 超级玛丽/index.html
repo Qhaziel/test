@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超级玛丽 - 横版平台游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD界面 -->
+        <div class="hud">
+            <div class="hud-left">
+                <span class="score-label">分数：</span>
+                <span class="score-value" id="score">0</span>
+            </div>
+            <div class="hud-right">
+                <span class="lives-label">生命：</span>
+                <span class="lives-value" id="lives">3</span>
+            </div>
+        </div>
+
+        <!-- 游戏画布 -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- 游戏状态覆盖层 -->
+        <div class="game-overlay" id="startScreen">
+            <h1>超级玛丽</h1>
+            <p>使用 方向键/WASD 移动，空格键 跳跃</p>
+            <p>收集金币，踩扁敌人，到达旗杆即可过关！</p>
+            <button id="startBtn">开始游戏</button>
+        </div>
+
+        <div class="game-overlay hidden" id="gameOverScreen">
+            <h1>游戏结束</h1>
+            <p>最终分数：<span id="finalScore">0</span></p>
+            <button id="restartBtn">重新开始</button>
+        </div>
+
+        <div class="game-overlay hidden" id="winScreen">
+            <h1>恭喜过关！</h1>
+            <p>最终分数：<span id="winScore">0</span></p>
+            <button id="playAgainBtn">再玩一次</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
